@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors liuhao (liuhao257@163.com)
+ * @date    2017-10-12 13:08:46
+ * @version $Id$
+ */
+
+body,ul,li,p {
+	margin: 0;
+	padding: 0;
+}
+
+.ul1 li {
+	list-style: none;
+}
+
+.ul1 .top_container {
+	margin-left: 10px;
+	margin-top: 15px;
+	/*内容垂直居中*/
+	display:flex;
+	align-items:center;
+}
+
+.ul1 .user_avatar {
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+}
+
+.ul1 .top_container span {
+	font-size: 14px;
+	margin-left: 10px;
+}
+
+.ul1 .top_container .top_nick {
+	font-weight:bold;
+	color: #1D4C84;
+}
+
+.ul1 .center_container {
+	height: 70px;
+	margin-left: 50px;
+	margin-top: 5px;
+	margin-right: 15px;
+	/*第二行，第三行也会跟着浮动,这句能清楚下面的浮动*/
+	overflow: auto;
+
+	border:1px solid #EBEBEB;
+}
+
+.ul1 .center_container_left {
+	height: 70px;
+	width: 70px;
+	float: left;
+	background-color: #EBEBEB;
+	/*.ul1 .center_container_left img 水平垂直居中*/
+	position:relative;
+}
+
+.ul1 .center_container_left {
+	float: left;
+}
+
+.ul1 .center_container_left img {
+	width: 50px;
+	height: 50px;
+	/*.ul1 .center_container_left img 水平垂直居中*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+
+}
+
+.ul1 .center_container_middle {
+	height: 100%;
+	float: left;
+}
+
+.ul1 .center_container_middle p {
+	margin-left: 10px;
+}
+
+.ul1 .center_container_middle .p_top {
+	margin-top: 6px;
+}
+
+.ul1 .center_container_middle .p_center {
+	font-size: 12px;
+	color: #B4B4B4;
+	margin-top: 5px;
+}
+
+.ul1 .center_container_middle .p_top span {
+	font-size: 14px;
+}
+
+.ul1 .center_container_middle .level_span {
+	color: #B4B4B4;
+}
+
+.ul1 .center_container_right {
+	height: 100%;
+	display:flex;
+	align-items:center;
+	float: right;
+}
+
+.ul1 .center_container_right div {
+	margin-right: 10px;
+	text-align: center;
+}
+
+.ul1 .center_container_right p {
+	margin-right: 0px;
+}
+
+.ul1 .center_container_right .game_result {
+	font-size: 13px;
+}
+
+.ul1 .center_container_right .game_type {
+	margin-top: 6px;
+	font-size: 12px;
+	color: #B4B4B4;
+}
+
+.game {
+	font-size: 12px;
+	margin-left: 50px;
+	margin-top: 10px;
+	color: #B4B4B4;
+}
+
+.line {
+	margin-top: 10px;
+	height: 1px;
+	width: 100%;
+	background-color: #F5F5F5;
+}

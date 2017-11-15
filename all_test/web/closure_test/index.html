@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script type="text/javascript">
+  //   	var person = function(){    
+		//     //变量作用域为函数内部，外部无法访问    
+		//     var name = "default";       
+		       
+		//     return {    
+		//        getName : function(){    
+		//            return name;    
+		//        },    
+		//        setName : function(newName){    
+		//            name = newName;    
+		//        }    
+		//     }    
+		// }();
+
+		// alert(person.name);
+		// alert(person.getName());    
+		// person.setName("abruzzi");    
+		// alert(person.getName());   
+
+
+
+
+
+		// var testValue = 6;
+
+		// function testParameterCallback(parameter) {
+		// 	var callback = parameter.callback;
+		// 	(callback)("hahahahaha");
+		// }  
+
+		// function test() {
+		// 	testParameterCallback({
+		// 		callback:function(param) {
+		// 			alert(param);
+
+		// 			alert(testValue);
+		// 		}
+		// 	})
+		// }
+
+		// test();
+
+
+
+
+		// function Person(){    
+	 //   		var name = "default";       
+	       
+		//     return {    
+		//        getName : function(){    
+		//            return name;    
+		//        },    
+		//        setName : function(newName){    
+		//            name = newName;    
+		//        }    
+		//     }    
+	 //    };   
+
+	 //    var p = new Person();
+	 //    p.setName("Tom");
+	 //    alert(p.getName());
+
+	 //    var Jack = function(){};
+	 //    //继承自Person
+	 //    Jack.prototype = new Person();
+	 //    //添加私有方法
+	 //    Jack.prototype.Say = function(){
+	 //        alert("Hello,my name is Jack");
+	 //    };
+	 //    var j = new Jack();
+	 //    j.setName("Jack");
+	 //    j.Say();
+	 //    alert(j.getName());
+		
+
+
+
+		// var Circle = new Object();  
+		// Circle.PI = 3.14159;  
+		// Circle.Area = function( r ) {  
+		//        return this.PI * r * r;  
+		// }  
+		  
+		// alert( Circle.Area( 2.0 ) );  
+
+
+		// var Circle = {  
+		//     PI:3.14159,  
+		//     area:function(r) {  
+		//         return this.PI * r * r;  
+		//     }  
+		// };  
+		// alert( Circle.area(3.0) )
+
+
+
+		// var html = {
+	 //        Name:'Object',
+	 //        Success:function(){
+	 //            this.Say = function(){
+	 //                    alert("Hello,world");
+	 //            };
+	 //            alert("Obj Success");
+	 //        }
+  //  		};
+
+
+  		var dom = function(){
+        
+	    };
+
+	    dom.Show = function(){
+	        alert("Show Message");
+	    };
+	    
+	    dom.prototype.Display = function(){
+	        alert("Property Message");
+	    };
+
+// 我们首先声明一个变量，将一个函数赋给他，因为在Javascript中每个函数都有一个Portotype属性，而对象没有。添加两个方法，分别直接添加和添加打破Prototype上面，来看下调用情况。分析结果如下：
+
+//  　　1、不使用prototype属性定义的对象方法，是静态方法，只能直接用类名进行调用！另外，此静态方法中无法使用this变量来调用对象其他的属性！
+// 　　 2、使用prototype属性定义的对象方法，是非静态方法，只有在实例化后才能使用！其方法内部可以this来引用对象自身中的其他属性！
+	    dom.Display(); //error
+	    dom.Show();  
+	    var d = new dom();
+	    d.Display();
+	    d.Show(); //error
+
+		// var dom = function(){
+		//     var Name = "Default";
+		//     this.Sex = "Boy";
+		//     this.success = function(){
+		//         alert("Success");
+		//     };
+		// };
+
+		// 大家先看看，会显示什么呢？ 答案是两个都显示Undefined,为什么呢？这是由于在Javascript中每个function都会形成一个作用域，而这些变量声明在函数中，所以就处于这个函数的作用域中，外部是无法访问的。要想访问变量，就必须new一个实例出来。
+		// alert(dom.Name);
+		// alert(dom.Sex);
+
+		// var d = new dom();
+		// alert(d.Name);
+		// alert(d.Sex);
+		// alert(d.success); 
+
+   		// var html = new Object();
+	    // html.Name = 'Object';
+	    // html.Success = function() {
+	    //     this.Say = function() {
+	    //         alert("Hello,world");
+	    //     };
+     // 	    alert("Obj Success");
+    	// };
+
+    	// html.Success().Say();//访问不到Say(),下面的可以
+  //   	var s = new html.Success();
+		// s.Say();
+
+		//还可以写到外面
+		// html.Success.prototype.Show = function(){
+		//     alert("HaHa");
+		// };
+		// var s = new html.Success();
+		// s.Show();
+    </script>
+</body>
+</html>
